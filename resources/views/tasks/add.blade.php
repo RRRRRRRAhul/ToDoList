@@ -1,27 +1,29 @@
 @extends('layout.default')
+
 @section('content')
-
-    <div class="d-flex justify-content-center align-items-center vh-100">
-
-        <div class="card w-100" style="max-width: 500px;">
-            <div class="text-center">
-                <h1>Add Task</h1>
+    <div class="container d-flex justify-content-center align-items-center min-vh-100">
+        <div class="card w-100 p-3" style="max-width: 500px;">
+            <div class="text-center mb-3">
+                <h2 class="fw-bold">Add Task</h2>
             </div>
 
-            <form action="{{ route('addTaskPost') }}" class="p-3" method="POST">
-                @csrf 
+            <form action="{{ route('addTaskPost') }}" method="POST">
+                @csrf
+
                 <div class="mb-3">
-                    <input type="text" class="form-control" name="title" placeholder="Title">
+                    <input type="text" class="form-control" name="title" placeholder="Task Title" required>
                 </div>
+
                 <div class="mb-3">
-                    <input type="datetime-local" class="form-control" name="deadline">
+                    <input type="datetime-local" class="form-control" name="deadline" required>
                 </div>
+
                 <div class="mb-3">
-                    <textarea class="form-control" rows="3" name="description" placeholder="Description"></textarea>
+                    <textarea class="form-control" name="description" rows="3" placeholder="Task Description"></textarea>
                 </div>
+
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>
-
         </div>
     </div>
 @endsection

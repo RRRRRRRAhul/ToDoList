@@ -10,7 +10,7 @@
     @yield('style')
 </head>
 
-<body class="d-flex align-items-center py-4 bg-body-tertiary">
+<body class="d-flex align-items-center justify-content-center min-vh-100 bg-body-tertiary">
 
     @yield('content')
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
