@@ -11,11 +11,10 @@ return new class extends Migration {
     public function up(): void
     {
         Schema::table('tasks', function (Blueprint $table) {
-            // create a column name 'user_id' that connects and associates with the users table
-            $table->unsignedBigInteger('user_id')->after('id');
-            $table->foreignId('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreignId('user_id')->after('id')->constrained()->cascadeOnDelete();
         });
     }
+
 
     /**
      * Reverse the migrations.
@@ -27,4 +26,5 @@ return new class extends Migration {
             $table->dropColumn('user_id');
         });
     }
+
 };
