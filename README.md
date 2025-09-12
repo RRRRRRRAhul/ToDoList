@@ -48,7 +48,7 @@ Follow these steps to set up the project locally:
 
 ```bash
 # 1️⃣ Clone the repository
-git clone https://github.com/your-username/laravel-to-do-list.git
+https://github.com/RRRRRRRAhul/ToDoList.git
 
 # 2️⃣ Navigate to the project folder
 cd laravel-to-do-list
