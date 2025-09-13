@@ -17,7 +17,14 @@ return new class extends Migration
             $table->string('deadline');
             $table->text('description')->nullable();
             $table->string('status')->nullable();
+            $table->unsignedBigInteger('user_id'); // Add user_id column
             $table->timestamps();
+
+            // Add foreign key constraint
+            $table->foreign('user_id')
+                  ->references('id')
+                  ->on('users')
+                  ->cascadeOnDelete();
         });
     }
 

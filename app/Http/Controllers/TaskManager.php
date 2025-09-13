@@ -51,6 +51,7 @@ class TaskManager extends Controller
         $task = Task::where('id', $id)->where('user_id', Auth::id())->first();
 
         if ($task && $task->update(['status' => 'completed'])) {
+            $task->delete();
             return redirect()->route('home')->with('success', 'Task status updated successfully!');
         }
 
